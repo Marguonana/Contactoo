@@ -8,7 +8,7 @@ import { CreateMemberComponent } from './create-member/create-member.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
-  { path: 'signup', component: CreateFamilyAccountComponent},
+  { path: '', component: CreateFamilyAccountComponent},
   { path: 'family', component: FamilyComponent},
   { path: 'addMember', component: CreateMemberComponent}
 ];
