@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "Contactoo"
+  "defaultProject": "Contactoo",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }
