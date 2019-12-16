@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-creation-compte-familial',
-  templateUrl: './creation-compte-familial.component.html',
-  styleUrls: ['./creation-compte-familial.component.scss']
+  selector: 'app-create-family-account',
+  templateUrl: './create-family-account.component.html',
+  styleUrls: ['./create-family-account.component.scss']
 })
-export class CreationCompteFamilialComponent implements OnInit {
+export class CreateFamilyAccountComponent implements OnInit {
 
   creationFamilleForm : FormGroup;
 

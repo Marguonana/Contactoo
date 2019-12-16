@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-create-member',
@@ -7,16 +6,10 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
   styleUrls: ['./create-member.component.scss']
 })
 export class CreateMemberComponent implements OnInit {
-  addMemberGroup : FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
-    this.addMemberGroup = this._formBuilder.group({
-      prenom : new FormControl(),
-      email : new FormControl()
-  
-    })
   }
 
 }

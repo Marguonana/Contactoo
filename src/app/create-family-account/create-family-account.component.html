@@ -1,0 +1,44 @@
+<mat-card class="element-creationCompte">
+    Contact'oo LOGO
+    <mat-card-header>
+        <mat-card-title>Creation du compte familial</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="creationFamilleForm" class="example-form">
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                    <input matInput id="familyName" placeholder="Choisissez un nom pour la famille" type="text" formControlname="familyName">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                    <input matInput id="creatorName" placeholder="Prénom du créateur de compte" type="text" formControlName="creatorName">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                    <input matInput id="email" placeholder="Prénom du créateur de compte" type="email" formControlName="email">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                    <input matInput id="sharedPassword" placeholder="Mot de passe partagé" type="password" formControlName="sharedPassword">
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <i>Chaque membre se connectera avec son mail et ce mot de passe</i>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="toCreateFamily()" color="primary">Enregistrer</button>
+    </mat-card-actions>
+</mat-card>
