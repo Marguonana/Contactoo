@@ -15,7 +15,7 @@ message : string;
   sendMsg() : void {
     if (this.message){
       console.log("Message à transmettre : ",this.message);
-      alert("Message transmi.")
+      alert("Message transmis.")
       this.message = "";
     }
       
