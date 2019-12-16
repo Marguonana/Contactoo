@@ -3,3 +3,14 @@ Add your NativeScript specific styles here.
 To learn more about styling in NativeScript see:
 https://docs.nativescript.org/angular/ui/styling
 */
+
+.page {
+    align-items: center;
+    flex-direction: column;
+  }
+  .form {
+    margin-left: 30;
+    margin-right: 30;
+    flex-grow: 2;
+    vertical-align: middle;
+  }

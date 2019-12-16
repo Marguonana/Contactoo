@@ -1,8 +1,37 @@
-<StackLayout>
-  <Label text="create-family-account works" textWrap="true"></Label>
-  <Label text="This is a migrated component" textWrap="true"></Label>
-  <Label text="Update it to provide the UI elements required in your mobile app" textWrap="true"></Label>
-</StackLayout>
+<ActionBar title="Contact'oo">
+    </ActionBar>
+    <StackLayout class="form">
+        <Label textWrap="true" text="Créer sa famille" class="h2 description-label">
+        </Label>
+    
+        <StackLayout id="2" class="input-field">
+            <TextField hint="Choisissez un nom pour la famille" class="input" autocorrect="false"
+                ></TextField>
+        </StackLayout>
+    
+        <StackLayout class="input-field">
+            <TextField hint="Prénom du créateur de compte" class="input"
+                ></TextField>
+        </StackLayout> 
+    
+        <StackLayout class="input-field">
+            <TextField hint="Email du créateur de compte" class="input"
+                ></TextField>
+        </StackLayout>
+    
+        <StackLayout class="input-field">
+            <TextField hint="Mot de pasfse partagé" class="input" secure="true"
+                >
+            </TextField>
+        </StackLayout>
+        <Label textWrap="true" text="Chaque membre se connectera avec son mail et ce mot de passe"
+            class="description-label"></Label>
+    
+        <Button text="Créer le compte" class="btn btn-primary"
+            (tap)="toCreateFamily()"></Button>
+    </StackLayout>
+
+    
 
 <!--
 Original Web template:

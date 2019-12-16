@@ -12,18 +12,20 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm : FormGroup;
+  password : string;
+  email : string;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
 
-    this.loginForm = this._formBuilder.group({
-      email : new FormControl(),
-      password : new FormControl()
   
-    })
-  
+  }
+
+  handleConnexion() : void {
+    console.log(this.email)
+    if (this.password && this.email && this.email == "admin@contactoo.fr" && this.password == "admin"){
+      this.router.navigate(['/family']);    }
   }
 
 }

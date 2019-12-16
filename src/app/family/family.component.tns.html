@@ -1,0 +1,28 @@
+<StackLayout>
+  <Label text="Famille Dupont" textWrap="true" class="h2"></Label>
+  <Label text="Bienvenue sur Contact'oo" textWrap="true"></Label>
+
+  <StackLayout class="input-field">
+      <Label text="Saisir un message"></Label>
+        <TextField  class="input col-20" [(ngModel)]="message"
+            ></TextField>
+            <Button text="Envoyer" class="btn btn-primary"
+            (tap)="sendMsg()"></Button>
+    </StackLayout> 
+</StackLayout>
+
+<!--
+Original Web template:
+
+<mat-card class="element-famille">
+    <span class="family-name">Famille [INSERER LE NOM D'UNE FAMILLE]</span>
+    <mat-card-header>
+        <mat-card-title>Creation du compte familial</mat-card-title>
+    </mat-card-header>
+    <span class="welcome mb-4">Bienvenue sur</span> <br />Contact'oo
+    <span>Inscrivez les différents<br /> membres de votre famille</span>
+    <mat-card-actions>
+        <button mat-raised-button (click)="toCreateFamily()" color="primary">Enregistrer</button>
+    </mat-card-actions>
+</mat-card>
+-->

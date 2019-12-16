@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./family.component.scss']
 })
 export class FamilyComponent implements OnInit {
-
+message : string;
   constructor() { }
 
   ngOnInit() {
   }
 
+  sendMsg() : void {
+    if (this.message){
+      console.log("Message à transmettre : ",this.message);
+      alert("Message transmi.")
+      this.message = "";
+    }
+      
+  }
 }
