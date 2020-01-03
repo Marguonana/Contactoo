@@ -12,8 +12,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  password : string;
-  email : string;
+  person = {
+    password : '',
+    email : ''
+  }
 
   constructor( private router: Router) { }
 
@@ -23,8 +25,8 @@ export class LoginComponent implements OnInit {
   }
 
   handleConnexion() : void {
-    console.log(this.email)
-    if (this.password && this.email && this.email == "admin@contactoo.fr" && this.password == "admin"){
+    console.log(this.person.email)
+    if (this.person.password && this.person.email && this.person.email.toUpperCase() === "admin@contactoo.fr".toUpperCase() && this.person.password == "admin"){
       this.router.navigate(['/family']);    }
   }
 

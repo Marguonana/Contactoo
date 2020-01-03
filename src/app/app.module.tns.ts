@@ -15,6 +15,9 @@ import { LoginComponent } from '@src/app/login/login.component';
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
  import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
+import { DashboardComponent } from '@src/app/dashboard/dashboard.component';
+import { WelcomeComponent } from '@src/app/dashboard/welcome/welcome.component';
+import { ConsultationComponent } from '@src/app/dashboard/consultation/consultation.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { LoginComponent } from '@src/app/login/login.component';
     CreateMemberComponent,
     FamilyComponent,
     LoginComponent,
+    DashboardComponent,
+    WelcomeComponent,
+    ConsultationComponent,
   ],
   imports: [
     NativeScriptModule,

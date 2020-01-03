@@ -1,11 +1,13 @@
-<mat-card class="element-famille">
-    <span class="family-name">Famille Dupont</span>
-    <mat-card-header>
-        <mat-card-title>Creation du compte familial</mat-card-title>
-    </mat-card-header>
-    <span class="welcome mb-4">Bienvenue sur</span> <br />Contact'oo
-    <span>Inscrivez les différents<br /> membres de votre famille</span>
-    <mat-card-actions>
-        <button mat-raised-button (click)="toCreateFamily()" color="primary">Enregistrer</button>
-    </mat-card-actions>
-</mat-card>
+
+<!-- Jumbotron -->
+<div class="jumbotron">
+    <h1>Famille Dupont</h1>
+    <form>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Saisissez un message" [(ngModel)]="message" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <div>
+        <button class="mt-3" mat-raised-button (click)="sendMsg()" color="primary">Envoyer</button>
+      </div>
+    </form>
+</div>

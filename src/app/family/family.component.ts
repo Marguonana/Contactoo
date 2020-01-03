@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-family',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./family.component.scss']
 })
 export class FamilyComponent implements OnInit {
+
 message : string;
-  constructor() { }
+
+  constructor(private api : ApiService) { }
 
   ngOnInit() {
   }
@@ -15,7 +18,7 @@ message : string;
   sendMsg() : void {
     if (this.message){
       console.log("Message à transmettre : ",this.message);
-      alert("Message transmis.")
+      this.api.post('message/',{txt: this.message}).subscribe(res => console.log(res), err => console.error('error: ', err));
       this.message = "";
     }
       

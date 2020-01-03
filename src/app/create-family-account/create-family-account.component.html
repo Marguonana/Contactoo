@@ -1,35 +1,35 @@
-<mat-card class="element-creationCompte">
+<div class="element-creationCompte mx-auto">
     Contact'oo LOGO
     <mat-card-header>
         <mat-card-title>Creation du compte familial</mat-card-title>
     </mat-card-header>
-    <mat-card-content>
+    <div>
         <form class="example-form">
         <table class="example-full-width" cellspacing="0">
             <tr>
                 <td>
-                    <mat-form-field class="example-full-width">
-                    <input matInput id="familyName" placeholder="Choisissez un nom pour la famille" type="text">
+                    <mat-form-field class="example-full-width wdt220">
+                    <input matInput id="familyName" placeholder="Choisissez un nom de groupe" type="text">
                     </mat-form-field>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <mat-form-field class="example-full-width">
+                    <mat-form-field class="example-full-width wdt220">
                     <input matInput id="creatorName" placeholder="Prénom du créateur de compte" type="text">
                     </mat-form-field>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <mat-form-field class="example-full-width">
-                    <input matInput id="email" placeholder="Prénom du créateur de compte" type="email">
+                    <mat-form-field class="example-full-width wdt220">
+                    <input matInput id="email" placeholder="Email du créateur de compte" type="email">
                     </mat-form-field>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <mat-form-field class="example-full-width">
+                    <mat-form-field class="example-full-width wdt220">
                     <input matInput id="sharedPassword" placeholder="Mot de passe partagé" type="password">
                     </mat-form-field>
                 </td>
@@ -37,8 +37,8 @@
         </table>
         <i>Chaque membre se connectera avec son mail et ce mot de passe</i>
         </form>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-raised-button (click)="toCreateFamily()" color="primary">Enregistrer</button>
-    </mat-card-actions>
-</mat-card>
+    </div>
+    <div>
+        <button class="mt-3" mat-raised-button (click)="toCreateFamily()" color="primary">Enregistrer</button>
+    </div>
+</div>
