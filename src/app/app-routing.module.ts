@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'family', component: FamilyComponent},
   { path: 'addMember', component: CreateMemberComponent},
   { path: 'welcome', component: WelcomeComponent},
-  {path: 'consultation', component: ConsultationComponent}
+  { path: 'consultation', component: ConsultationComponent}
 ];
 
 @NgModule({

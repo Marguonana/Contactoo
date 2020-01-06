@@ -26,4 +26,8 @@ export class ConsultationComponent implements OnInit {
     .catch( err => console.error)
   }
 
+  deleteMsg(text) {
+    this.messageList = this.messageList.filter(el => { return el != text});
+  }
+
 }
