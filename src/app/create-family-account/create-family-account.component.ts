@@ -13,6 +13,10 @@ export class CreateFamilyAccountComponent implements OnInit {
 
   }
 
+  toCreateFamily(){
+    
+  }
+
   ngOnInit() {
 
   }
