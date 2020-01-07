@@ -13,6 +13,7 @@ export class ConsultationComponent implements OnInit {
    * Prochainement: Array<object> = { 'nom': '', msg: ''}
    */
   messageList : Array<string>;
+  consultation = true;
 
   constructor(private api : ApiService) { }
 
