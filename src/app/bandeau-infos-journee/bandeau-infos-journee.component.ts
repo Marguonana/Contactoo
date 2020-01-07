@@ -1,20 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import * as moment from "moment";
+import { Observable, interval } from 'rxjs';
+import { map, distinctUntilChanged } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-bandeau-infos-journee',
   templateUrl: './bandeau-infos-journee.component.html',
-  styleUrls: ['./bandeau-infos-journee.component.scss']
+  styleUrls: ['./bandeau-infos-journee.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BandeauInfosJourneeComponent implements OnInit {
 
+  pageLoaded: moment.Moment;
   dateComplete:string;
   dateEtMomentDeLaJournee:string;
-  heure:string;
+  heure;
 
   constructor() { }
 
   ngOnInit() {
+    this.heure = interval(1000*6).pipe( map(()=>
+    {
+      this.pageLoaded = moment(new Date());
+      return this.pageLoaded.format("HH:mm");
+     })
+    )
   }
 
   getDateComplete():string{
@@ -46,9 +57,9 @@ export class BandeauInfosJourneeComponent implements OnInit {
     return "non déterminé";
   }
 
-  getHeure():string{
-    this.heure = moment().lang("fr").format("HH") + " h " + moment().lang("fr").format("mm") + " mn "
-    return this.heure;
-  }
+  // getHeure():string{
+  //   this.heure = moment().lang("fr").format("HH") + " h " + moment().lang("fr").format("mm") + " mn "
+  //   return this.heure;
+  // }
 
 }

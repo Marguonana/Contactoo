@@ -7,5 +7,5 @@
                 <strong>Marc: </strong>{{msg}}
             </div>  
     </div>
-    <div *ngIf="(messageList && messageList.length < 0) || !messageList" class="mx-auto">Aucun nouveau message</div>
+    <div *ngIf="aucunMsg==='true'" class="mx-auto">Aucun nouveau message</div>
 </div>

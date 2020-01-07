@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-4">{{ getDateComplete() }}</div>
-  <div class="col-4">{{ getDateEtMomentDeLaJournee() }}</div>
-  <div class="col-4">{{ getHeure() }}</div>
+  <div class="col-4">Nous sommes {{ getDateEtMomentDeLaJournee() }}</div>
+  <div class="col-4">{{ heure | async }}</div>
 </div>
 
 <hr>

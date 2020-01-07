@@ -14,6 +14,7 @@ export class ConsultationComponent implements OnInit {
    */
   messageList : Array<string>;
   consultation = true;
+  aucunMsg;
 
   constructor(private api : ApiService) { }
 
@@ -22,9 +23,14 @@ export class ConsultationComponent implements OnInit {
     .then(received => {
       if(received && received.length > 0){
         this.messageList = received;
+        if (this.messageList && this.messageList.length < 0){
+          this.aucunMsg = true;
+        }else{
+          this.aucunMsg = false;
+        }
       }
     })
-    .catch( err => console.error)
+    .catch( err => this.aucunMsg = true)
   }
 
   deleteMsg(text) {
