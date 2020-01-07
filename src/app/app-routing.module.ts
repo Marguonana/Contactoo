@@ -11,8 +11,8 @@ import { ConsultationComponent } from './dashboard/consultation/consultation.com
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'create', component: CreateFamilyAccountComponent},
-  { path: '', component: WelcomeComponent},
-  { path: 'family', component: FamilyComponent},
+  { path: 'welcome', component: WelcomeComponent},
+  { path: '', component: FamilyComponent},
   { path: 'addMember', component: CreateMemberComponent},
   { path: 'welcome', component: WelcomeComponent},
   { path: 'consultation', component: ConsultationComponent}

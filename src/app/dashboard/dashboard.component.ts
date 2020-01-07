@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 
@@ -10,9 +11,10 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor( router: Router) { }
+  constructor( ) { }
 
   ngOnInit() {
+    
   }
 
 }
