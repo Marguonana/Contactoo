@@ -1,36 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, DoCheck } from '@angular/core';
 import { ApiService } from '@src/app/service/api.service';
 import { HttpParams } from '@angular/common/http';
+import { Observable, interval } from 'rxjs';
+import { map, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-consultation',
   templateUrl: './consultation.component.html',
-  styleUrls: ['./consultation.component.scss']
+  styleUrls: ['./consultation.component.scss'],
+  changeDetection : ChangeDetectionStrategy.OnPush
 })
-export class ConsultationComponent implements OnInit {
+export class ConsultationComponent implements OnInit, DoCheck {
 
   /**
    * Prochainement: Array<object> = { 'nom': '', msg: ''}
    */
-  messageList : Array<string>;
+  messageList;
   consultation = true;
   aucunMsg;
+  observableMsgList;
 
   constructor(private api : ApiService) { }
 
-  ngOnInit() {
-    this.api.getUnhandled<Array<string>>('message/').toPromise()
-    .then(received => {
-      if(received && received.length > 0){
-        this.messageList = received;
-        if (this.messageList && this.messageList.length < 0){
-          this.aucunMsg = true;
-        }else{
-          this.aucunMsg = false;
+  ngOnInit() {   
+  }
+
+  ngDoCheck(): void {
+      this.api.getUnhandled<Array<string>>('message/').toPromise()
+      .then(received => {
+        if(received && received.length > 0){
+          this.messageList = received;
+          if (this.messageList && this.messageList.length < 0){
+            this.aucunMsg = true;
+          }else{
+            this.aucunMsg = false;
+          }
         }
-      }
-    })
-    .catch( err => this.aucunMsg = true)
+      })
+      .catch( err => this.aucunMsg = true) 
+  }
+
+  checkMessage() {
+
+    
   }
 
   deleteMsg(text) {
