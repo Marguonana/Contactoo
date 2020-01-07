@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateMemberComponent implements OnInit {
 
+  email: string;
+  prenom: string; 
+
   constructor() { }
 
   ngOnInit() {
@@ -15,5 +18,7 @@ export class CreateMemberComponent implements OnInit {
   addMember() {
     
   }
+
+  toCreateFamily(){}
 
 }
