@@ -4,7 +4,7 @@
     <div class="alert-group col-7 mx-auto" *ngFor="let msg of messageList">
             <div class="alert alert-info alert-dismissable mx-auto">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <strong>Marc: </strong>{{msg}}
+                <strong>Hervé: </strong>{{msg}}
             </div>  
     </div>
     <div *ngIf="(messageList && messageList.length < 0) || !messageList" class="mx-auto">Aucun nouveau message</div>

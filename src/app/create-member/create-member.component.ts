@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateMemberComponent implements OnInit {
 
+  nom: string;
   email: string;
   prenom: string; 
 

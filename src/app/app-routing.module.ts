@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'create', component: CreateFamilyAccountComponent},
   { path: 'welcome', component: WelcomeComponent},
-  { path: '', component: FamilyComponent},
+  { path: '', component: LoginComponent},
+  { path: 'family', component: FamilyComponent},
   { path: 'addMember', component: CreateMemberComponent},
   { path: 'welcome', component: WelcomeComponent},
   { path: 'consultation', component: ConsultationComponent}

@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
 
   handleConnexion() : void {
     console.log(this.person.email)
-    if (this.person.password && this.person.email && this.person.email.toUpperCase() === "admin@contactoo.fr".toUpperCase() && this.person.password == "admin"){
-      this.router.navigate(['/family']);    }
+    if (this.person.password && this.person.email && this.person.email.toUpperCase() === "rvguevel@free.fr".toUpperCase() && this.person.password == "contactoo"){
+      this.router.navigate(['/welcome']);    }
   }
 
 }
