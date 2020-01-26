@@ -62,4 +62,57 @@
 
 .breakwd{
     overflow-wrap: break-word;
+    background: white;
+    height: 170px;
 }
+
+.top-buffer { margin-top:20px; background: #bfdde8;}
+
+.lastMinute {
+    background-color:#4497ce;
+    text-align:center;
+    color:white;
+}
+
+.lastMinuteContent {
+    color: red;
+}
+
+.content-bottom {
+    overflow-wrap: break-word;
+    background: white;
+
+}
+
+.rounded-top-contactoo {
+    border-radius: 25px 25px 0px 0px;
+}
+
+.rounded-bottom-contactoo {
+    border-radius: 0px 0px 25px 25px;
+}
+
+.rounded-left-contactoo {
+    border-radius: 25px 0px 25px 0px;
+}
+
+.rounded-right-contactoo {
+    border-radius: 0px 25px 25px 0px;
+}
+
+.rounded-left-top-contactoo {
+    border-radius: 25px 0px 0px 0px;
+}
+
+.rounded-left-bottom-contactoo {
+    border-radius: 0px 0px 0px 25px;
+}
+
+.rounded-rigth-top-contactoo {
+    border-radius: 0px 25px 0px 0px;
+}
+
+.rounded-rigth-bottom-contactoo {
+    border-radius: 0px 0px 25px 0px;
+}
+

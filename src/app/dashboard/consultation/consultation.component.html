@@ -1,31 +1,54 @@
-<app-bandeau-infos-journee></app-bandeau-infos-journee>
-<!-- 
-<div class="row mb-3">
-    <div class="alert-group col-7 mx-auto" *ngFor="let msg of messageList ">
-            <div class="alert alert-info alert-dismissable mx-auto" style="font-size:32px">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true" (click)="deleteMsg(msg)">×</button>
-                <strong>Hervé: </strong>{{msg}}
-            </div> 
-    </div>
-    <div *ngIf="aucunMsg==='true'" class="mx-auto">Aucun nouveau message</div>
-</div> -->
+<div id="consultation">
 
-<div class = "row" >
-    <div class = "col-md-4 h-50">
-       <p class = "ajdEntete">Aujourd'hui</p>
-       <div class ="breakwd">
-        uizefhuiezhfiuzehiufhzuihfiezhfiz
-       </div>
+    <app-bandeau-infos-journee></app-bandeau-infos-journee>
+    <!-- 
+    <div class="row mb-3">
+        <div class="alert-group col-7 mx-auto" *ngFor="let msg of messageList ">
+                <div class="alert alert-info alert-dismissable mx-auto" style="font-size:32px">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true" (click)="deleteMsg(msg)">×</button>
+                    <strong>Hervé: </strong>{{msg}}
+                </div> 
+        </div>
+        <div *ngIf="aucunMsg==='true'" class="mx-auto">Aucun nouveau message</div>
+    </div> -->
+
+    <div class = "row" style="font-size:32px">
+        <div class = "col-md-4 h-50">
+        <div class = "ajdEntete rounded-top-contactoo">Aujourd'hui</div>
+        <div class ="breakwd rounded-bottom-contactoo text-center">
+                Pas de message.
+        </div>
+        </div>
+        <div class = "col-md-4 h-50">
+            <div class = "demainEntete rounded-top-contactoo">Demain</div>
+        <div class ="breakwd rounded-bottom-contactoo text-center">
+            zefnojezoifjozeijfzj
+        </div>
+        </div>
+        <div class = "col-md-4 h-50">
+            <div class = "prochainementEntete rounded-top-contactoo">Prochainement</div>
+        <div class ="breakwd rounded-bottom-contactoo text-center">
+            f,lze,flkz,lkzf
+        </div>
+        </div>
     </div>
-    <div class = "col-md-4 h-50">
-        <p class = "demainEntete">Demain</p>
-       <div class ="breakwd">
-           zefnojezoifjozeijfzj
-       </div>
+
+    <div class="row top-buffer" style="background: #bfdde8; font-size:32px">
+        <div class = "col-md-4">
+        <div class = "lastMinute rounded-left-top-contactoo">dernière minute ...</div>
+        <div class ="lastMinuteContent content-bottom text-center rounded-left-bottom-contactoo">
+            Nous aurons 30minutes de retard.
+        </div>
+        </div>
+        <div class = "col-md-4 ">
+        <div class ="content-bottom text-center">
+            Jean-Louis: Je suis absent jusqu'au 20 mars
+        </div>
+        </div>
+        <div class = "col-md-4">
+        <div class ="content-bottom text-center rounded-right-contactoo">
+            - - -
+        </div>
+        </div>
     </div>
-    <div class = "col-md-4 h-50">
-        <p class = "prochainementEntete">Prochainement</p>
-       <div class ="breakwd">
-           f,lze,flkz,lkzf
-       </div>
-    </div>
+</div>

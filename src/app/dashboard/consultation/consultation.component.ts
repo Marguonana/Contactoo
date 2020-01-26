@@ -23,6 +23,10 @@ export class ConsultationComponent implements OnInit, OnDestroy {
   constructor(private api : ApiService) { }
 
   ngOnInit() {  
+    let elem = document.documentElement;
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    }
     this.observableMsgList = Observable.create((observer : any) => {
       try {
         setInterval(() => {
