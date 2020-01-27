@@ -28,10 +28,7 @@ export class ConsultationComponent implements OnInit, OnDestroy {
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    // let elem = document.documentElement;
-    // if (elem.requestFullscreen) {
-    //   elem.requestFullscreen();
-    // } 
+    this.requestFullScreen(document.documentElement);
     this.observableMsgList = Observable.create((observer: any) => {
       try {
         setInterval(() => {
@@ -70,7 +67,16 @@ export class ConsultationComponent implements OnInit, OnDestroy {
     });
   }
 
+  requestFullScreen(element) {
+    // Supports most browsers and their versions.
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+    if (requestMethod) { // Native full screen.
+        requestMethod.call(element);
+    }
+}
   
+
   ngOnDestroy() {
     this.observableMsgList.unsubscribe();
   }
