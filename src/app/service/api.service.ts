@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 export class ApiService implements OnDestroy {
  
   private subscription: Subscription;
-  private urlApi : string = 'http://localhost:3000/';
+  private urlApi : string = 'https://shielded-tundra-35253.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 
