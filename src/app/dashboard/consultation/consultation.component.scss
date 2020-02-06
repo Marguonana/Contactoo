@@ -80,8 +80,6 @@
 
 .content-bottom {
     overflow-wrap: break-word;
-    background: white;
-
 }
 
 .rounded-top-contactoo {
@@ -110,9 +108,14 @@
 
 .rounded-rigth-top-contactoo {
     border-radius: 0px 25px 0px 0px;
+    background:white
 }
 
 .rounded-rigth-bottom-contactoo {
     border-radius: 0px 0px 25px 0px;
 }
 
+.oop{
+    vertical-align: text-bottom;
+    background:white
+}
