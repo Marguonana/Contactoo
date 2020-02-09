@@ -10,7 +10,7 @@ import { ConsultationComponent } from './dashboard/consultation/consultation.com
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
-  { path: 'create', component: CreateFamilyAccountComponent},
+  { path: 'compte', component: CreateFamilyAccountComponent},
   { path: 'welcome', component: WelcomeComponent},
   { path: '', component: LoginComponent},
   { path: 'family', component: FamilyComponent},
