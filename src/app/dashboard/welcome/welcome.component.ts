@@ -10,6 +10,9 @@ export class WelcomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    let body = document.getElementById("body");
+    body.style.background = null;
+    body.style.backgroundSize=  null;
   }
 
 }

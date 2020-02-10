@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-family-account.component.scss']
 })
 export class CreateFamilyAccountComponent implements OnInit {
+  next: boolean;
   user = {
     password : '',
     email : '',
@@ -29,17 +30,19 @@ export class CreateFamilyAccountComponent implements OnInit {
     this.listStatut = ['Parent','Fils','Fille','Petit-fils','Petite-fille','Famille autre','Médecin','Infirmière','Medical autre','Ste de service','Autre'];
   }
 
+  
+  ngOnInit() {
+    // let body = document.getElementById("body");
+    // body.style.background = null;
+    // body.style.backgroundSize=  null;
+  }
+
   toCreateFamily(){
     
   }
 
   setEhpad(e){
     this.user.ehpad = e.checked;
-  }
-
-
-  ngOnInit() {
-
   }
 
 }

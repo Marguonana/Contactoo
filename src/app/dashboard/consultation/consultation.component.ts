@@ -28,6 +28,8 @@ export class ConsultationComponent implements OnInit, OnDestroy {
   constructor(private api: ApiService) {}
 
   ngOnInit() {
+    let body = document.getElementById("body");
+    body.style.background = "#bfdde8";
     this.observableMsgList = Observable.create((observer: any) => {
       try {
         setInterval(() => {
