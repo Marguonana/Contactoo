@@ -14,19 +14,22 @@ export class LoginComponent implements OnInit {
 
   person = {
     password : '',
-    email : ''
+    email : '',
+    tel: ''
   }
 
   constructor( private router: Router) { }
 
   ngOnInit() {
-
+    let body = document.getElementById("body");
+    body.style.background = " no-repeat url('../../assets/grandparent.jpg')";
+    body.style.backgroundSize=  "100% auto";
   
   }
 
   handleConnexion() : void {
-    console.log(this.person.email)
-    if (this.person.password && this.person.email && this.person.email.toUpperCase() === "rvguevel@free.fr".toUpperCase() && this.person.password == "contactoo"){
+    console.log(this.person.tel)
+    if (this.person.tel && (this.person.tel == "0618401183" || this.person.tel == "0000") ){
       this.router.navigate(['/welcome']);    }
   }
 

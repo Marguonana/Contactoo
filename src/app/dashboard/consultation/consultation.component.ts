@@ -28,7 +28,8 @@ export class ConsultationComponent implements OnInit, OnDestroy {
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.requestFullScreen(document.documentElement);
+    let body = document.getElementById("body");
+    body.style.background = "#bfdde8";
     this.observableMsgList = Observable.create((observer: any) => {
       try {
         setInterval(() => {
@@ -49,8 +50,7 @@ export class ConsultationComponent implements OnInit, OnDestroy {
         if (received && received.length > 0) {
           
           
-          this.messageList = received;
-          this.messageList = this.messageList[this.messageList.length-1]
+          this.messageList = received.slice(-3);
           if (this.messageList && this.messageList.length < 0) {
             this.aucunMsg = true;
           } else {
