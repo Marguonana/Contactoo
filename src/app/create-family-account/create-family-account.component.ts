@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class CreateFamilyAccountComponent implements OnInit {
   next: boolean;
   user = {
+    nom: '',
+    prenom: '',
     password : '',
     email : '',
     statut: '',
@@ -21,6 +23,7 @@ export class CreateFamilyAccountComponent implements OnInit {
     medecin: '',
     portable: '',
     nomSteService: '',
+    autre: '',
     infos: ''
   }
 
