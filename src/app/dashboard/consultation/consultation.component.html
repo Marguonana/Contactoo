@@ -26,7 +26,7 @@
     </div>
     <div class="col-md-4 h-50">
       <div class="prochainementEntete rounded-top-contactoo">Prochainement</div>
-      <div class="breakwd rounded-bottom-contactoo text-center col-12">
+      <div class="breakwd rounded-bottom-contactoo text-center col-12" style="font-size: 14px;">
         <div *ngFor="let msg of messageList; let i = index" class="col-12">
           <strong>{{msg.emetteur.nom }}:</strong> {{msg.corpus}}
           <hr *ngIf="i !== 2">
