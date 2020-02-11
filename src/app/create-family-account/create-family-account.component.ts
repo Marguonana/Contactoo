@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class CreateFamilyAccountComponent implements OnInit {
 
   listStatut: Array<string>;
 
-  constructor() { 
+  constructor(private router: Router) { 
     this.listStatut = ['Parent','Fils','Fille','Petit-fils','Petite-fille','Famille autre','Médecin','Infirmière','Medical autre','Ste de service','Autre'];
   }
 
@@ -42,6 +43,10 @@ export class CreateFamilyAccountComponent implements OnInit {
 
   toCreateFamily(){
     
+  }
+
+  handleCreation() : void {
+    this.router.navigate(['/welcome']);    
   }
 
   setEhpad(e){
