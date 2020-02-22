@@ -1,10 +1,15 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar> -->
 
 <!-- Jumbotron -->
 <div class="jumbotron">
     <h1>Bienvenue sur Contactoo <span>Famille Guevel</span></h1>
     <p class="lead">Inscrivez les différents membres de votre famille</p>
-    <p><a class="btn btn-lg btn-success" [routerLink]="['/addMember']" routerLinkActive="router-link-active"  role="button">Ajouter</a></p>
+    <div class="col-6 mx-auto">
+        <p><a class="btn btn-lg btn-success col-sm-10" [routerLink]="['/family']" routerLinkActive="router-link-active"  role="button">Ajouter un message Groupe</a></p>
+        <p><a class="btn btn-lg btn-success col-sm-10" [routerLink]="['/compte']" routerLinkActive="router-link-active"  role="button">Ajouter un membre au Groupe</a></p>
+        <p><a class="btn btn-lg btn-success col-sm-10" [routerLink]="['/.']" routerLinkActive="router-link-active"  role="button">Ajouter un rendez-vous ou une visite </a></p>
+        <p><a class="btn btn-lg btn-info col-sm-10 rounded-circle" [routerLink]="['/.']" routerLinkActive="router-link-active"  role="button">Ajouter autre info</a></p>    
+    </div>
 </div>
 
 <app-footer></app-footer>
