@@ -18,6 +18,7 @@ export class RendezVousComponent implements OnInit {
   calendarEvents: EventInput[] = [
     { title: 'Visite', start: new Date() }
   ];
+  mode : string;
 
   @ViewChild("calendar",null) calendarComponent: FullCalendarComponent; // the #calendar in the template
 
