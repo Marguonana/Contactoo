@@ -5,9 +5,15 @@
             <div class="text-center">
                 <p id="profile-name" class="profile-name-card"></p>
                 <form  class="form-signin">
-                    <input type="tel" name="tel" id="inputTel" class="form-control form-group" placeholder="Numéro de téléphone" [(ngModel)]="person.tel" [ngModelOptions]="{standalone: true}" required autofocus>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="handleConnexion()">Entrer</button>
-                    <a href="#" id="forgot_pswd" [routerLink]="['/compte']">Pas encore de compte?</a> 
+                    <div>
+                        <input type="tel" name="tel" id="inputTel" class="form-control form-group" placeholder="Numéro de téléphone" [(ngModel)]="person.tel" [ngModelOptions]="{standalone: true}" (click)="cleanInput('email')" required autofocus>
+                    </div>
+                    <p> OU </p>
+                    <div>
+                        <input type="email" name="email" id="inputEmail" class="form-control form-group" placeholder="Adresse mail" [(ngModel)]="person.email" [ngModelOptions]="{standalone: true}" (click)="cleanInput('tel')" required autofocus>
+                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="handleConnexion()">Entrer</button>
+                        <a href="https://www.contactoo.fr/groupe-famille" id="forgot_pswd" >Pas encore de compte?</a> 
+                    </div>
                 </form>
             </div>
         </div>

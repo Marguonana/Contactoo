@@ -1,121 +1,139 @@
-.alert-group>.alert:first-child:not(:last-child){
-    -webkit-border-top-left-radius:5px;
-    -webkit-border-top-right-radius:5px;
-    -webkit-border-bottom-right-radius:0;
-    -webkit-border-bottom-left-radius:0;
-       -moz-border-radius-topleft:5px;
-       -moz-border-radius-topright:5px;
-       -moz-border-radius-bottomright:0;
-       -moz-border-radius-bottomleft:0;
-            border-top-left-radius:5px;
-            border-top-right-radius:5px;
-            border-bottom-right-radius:0;
-            border-bottom-left-radius:0;
-    margin-bottom:0
-}
-.alert-group>.alert:not(:first-child):not(:last-child){
-    -webkit-border-radius:0;
-       -moz-border-radius:0;
-            border-radius:0;
-    border-top:0;
-    margin-bottom:0
-}
-.alert-group>.alert:last-child:not(:first-child){
-    -webkit-border-top-left-radius:0;
-    -webkit-border-top-right-radius:0;
-    -webkit-border-bottom-right-radius:5px;
-    -webkit-border-bottom-left-radius:5px;
-       -moz-border-radius-topleft:0;
-       -moz-border-radius-topright:0;
-       -moz-border-radius-bottomright:5px;
-       -moz-border-radius-bottomleft:5px;
-            border-top-left-radius:0;
-            border-top-right-radius:0;
-            border-bottom-right-radius:5px;
-            border-bottom-left-radius:5px;
-    border-top:0
-}
 
-.alert-info {
-    background-color: #dce5e6;
-    border-color: #d1dbdc;
-}
-
-.ajdEntete{
-    background-color:#008f7b;
-    text-align:center;
-    color:white;
-  
-}
-
-.demainEntete{
-    background-color:#ee3e41;
-    text-align:center;
-    color:white;
-}
-
-.prochainementEntete{
-    background-color:#a52489;
-    text-align:center;
-    color:white;
-}
-
-.breakwd{
-    overflow-wrap: break-word;
-    background: white;
-    height: 170px;
-}
-
-.top-buffer { margin-top:20px; background: #bfdde8;}
-
-.lastMinute {
-    background-color:#4497ce;
-    text-align:center;
-    color:white;
-}
-
-.lastMinuteContent {
-    color: red;
-}
-
-.content-bottom {
-    overflow-wrap: break-word;
-}
-
-.rounded-top-contactoo {
-    border-radius: 25px 25px 0px 0px;
-}
-
-.rounded-bottom-contactoo {
-    border-radius: 0px 0px 25px 25px;
-}
-
-.rounded-left-contactoo {
-    border-radius: 25px 0px 25px 0px;
-}
-
-.rounded-right-contactoo {
-    border-radius: 0px 25px 25px 0px;
-}
-
-.rounded-left-top-contactoo {
-    border-radius: 25px 0px 0px 0px;
-}
-
-.rounded-left-bottom-contactoo {
-    border-radius: 0px 0px 0px 25px;
-}
-
-.rounded-rigth-top-contactoo {
-    border-radius: 0px 25px 0px 0px;
-    background:white
-}
-
-.rounded-rigth-bottom-contactoo {
-    border-radius: 0px 0px 25px 0px;
-}
-
-.oop{
-    vertical-align: text-bottom;
-    background:white
-}
+body {
+    background:#ddd;
+    font-family:Arial,sans-serif;
+    margin: 0;
+    }
+    
+    table {
+       border-spacing: 28px;
+    }
+    
+    .cadre {
+        background:#ddd;
+    }
+    
+    .date, .jour, .texte-jour, .lastminute, .texte-lastminute,
+    .demain, .texte-demain, .divers1,
+    .prochain, .texte-prochain, .divers2 {
+       width: 680px;
+    }
+    
+    .date {
+      height: 205px;
+      border-radius: 40px 0 0 40px;
+      font-size: 67px;
+      color: #fff;
+      background: #0505ff; 
+    }
+    
+    .jour {  
+      height: 110px;
+      background: #03C728;
+      color: #000;
+      border-radius: 40px 40px 0 0;
+      font-size:57px;
+      letter-spacing: 3px;
+    }
+    
+    .texte-jour {  
+      height: 360px;
+      background: #fff;
+      color: #000;
+      border-radius: 0 0 40px 40px;
+      font-size: 35px;
+      font-family: times;
+    }
+    
+    .lastminute {  
+      height: 100px;
+      border-radius: 40px 0 40px 0;
+      font-size: 50px;
+      letter-spacing: 2px;
+      background: #ff0000; 
+      color: #fff;
+    }
+    
+    .texte-lastminute {
+      height: 180px;
+      background: #fff;
+      color: #ff0000;
+      border-radius: 0 40px 0 40px;
+      font-size: 30px;
+    }
+    
+    /*======================================*/
+    
+    .jour-heure {
+      height: 205px; 
+      border-radius: 0 40px 40px 0;
+      font-size: 67px;
+      color: #fff;
+      background: #0505ff; 
+    }
+    
+    /*=======*/
+    
+    .demain {
+      height: 110px;
+      background: #FD8D29; 
+      color: #000;
+      border-radius: 40px 40px 0 0; 
+      font-size: 57px;
+      letter-spacing: 3px;
+    }
+    
+    .texte-demain {
+      height: 360px;
+      border-radius: 0 0 40px 40px;
+      font-size: 35px;
+      font-family: times;
+      background: #fff;
+      color: #000;
+    }
+    
+    .divers1 {
+      height: 280px;
+      background: #fff;
+      color: #707070; 
+      height: 290px; 
+      font-size: 30px;
+    }
+    
+    /*===============================*/
+    
+    .prochain {
+      height:110px;
+      background: #ffe000; 
+      color: #000; 
+      border-radius: 40px 40px 0 0; 
+      font-size: 57px; 
+      letter-spacing: 3px;
+    }
+    
+    .texte-prochain {
+      height: 360px; 
+      background: #fff;
+      color: #000;
+      border-radius: 0 0 40px 40px;
+      font-size: 35px;
+      font-family: times;
+    }
+    
+    .divers2 {
+      height: 280px;
+      background: #fff;
+      color: #707070;  
+      border-radius: 0 40px 40px 0;
+      font-size: 30px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

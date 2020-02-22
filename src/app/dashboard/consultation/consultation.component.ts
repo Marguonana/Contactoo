@@ -8,6 +8,7 @@ import {
 import { ApiService } from "@src/app/service/api.service";
 import { HttpParams } from "@angular/common/http";
 import { Observable, interval } from "rxjs";
+import * as moment from "moment";
 import { map, distinctUntilChanged } from "rxjs/operators";
 
 @Component({
@@ -25,11 +26,22 @@ export class ConsultationComponent implements OnInit, OnDestroy {
   aucunMsg;
   observableMsgList;
 
+  pageLoaded: moment.Moment;
+  dateComplete:string;
+  dateEtMomentDeLaJournee:string;
+  heure;
+
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    let body = document.getElementById("body");
-    body.style.background = "#bfdde8";
+    let container = document.getElementById("dashboard-container");
+    container.classList.remove("container");
+    this.heure = interval(1000*6).pipe( map(()=>
+    {
+      this.pageLoaded = moment(new Date());
+      return this.pageLoaded.format("HH:mm");
+     })
+    )
     this.observableMsgList = Observable.create((observer: any) => {
       try {
         setInterval(() => {
@@ -41,6 +53,39 @@ export class ConsultationComponent implements OnInit, OnDestroy {
     });
     this.observableMsgList.subscribe();
   }
+
+  getDateComplete():string{
+    this.dateComplete = moment().lang("fr").format("Do MMMM YYYY")
+    return this.dateComplete;
+  }
+
+  getDateEtMomentDeLaJournee():string{
+    this.dateEtMomentDeLaJournee = moment().lang("fr").format("dddd") + this.determinerMomentDeLaJournee();
+    return this.dateEtMomentDeLaJournee
+  }
+
+  determinerMomentDeLaJournee():string{
+    if (moment().lang("fr").format("HH") >= "06" && moment().lang("fr").format("HH") < "12"){
+      return " matin";
+    }
+    if (moment().lang("fr").format("HH") >= "12" && moment().lang("fr").format("HH") < "18"){
+      return " après-midi";
+    }
+    if (moment().lang("fr").format("HH") >= "18" && moment().lang("fr").format("HH") < "22"){
+      return " soir";
+    }
+    if (moment().lang("fr").format("HH") >= "22" && moment().lang("fr").format("HH") < "24"){
+      return " (nuit)";
+    }
+    if (moment().lang("fr").format("HH") >= "00" && moment().lang("fr").format("HH") < "06"){
+      return " (nuit)";
+    }
+    return "non déterminé";
+  }
+
+
+
+
 
   checkMessage() {
     this.api
