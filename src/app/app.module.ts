@@ -18,6 +18,7 @@ import { ConsultationComponent } from '@src/app/dashboard/consultation/consultat
 import { BandeauInfosJourneeComponent } from '@src/app/bandeau-infos-journee/bandeau-infos-journee.component';
 import { NavbarComponent } from '@src/app/dashboard/navbar/navbar.component';
 import { FooterComponent } from '@src/app/dashboard/footer/footer.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 import { RendezVousComponent } from '@src/app/dashboard/rendez-vous/rendez-vous.component';
 
 @NgModule({
@@ -44,6 +45,7 @@ import { RendezVousComponent } from '@src/app/dashboard/rendez-vous/rendez-vous.
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
