@@ -28,6 +28,7 @@
     "@angular/platform-browser": "~8.2.7",
     "@angular/platform-browser-dynamic": "~8.2.7",
     "@angular/router": "~8.2.7",
+    "@fullcalendar/angular": "^4.4.5-beta",
     "@nativescript/schematics": "^0.7.3",
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
