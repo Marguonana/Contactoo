@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     let body = document.getElementById("body");
     body.style.background = " no-repeat url('../../assets/grandparent.jpg')";
-    body.style.backgroundSize=  "100% auto";
+    body.style.backgroundSize=  "cover";
+    body.style.backgroundPosition = "center center";
   
   }
 
