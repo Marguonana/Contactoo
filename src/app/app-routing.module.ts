@@ -8,7 +8,7 @@ import { WelcomeComponent } from './dashboard/welcome/welcome.component';
 import { ConsultationComponent } from './dashboard/consultation/consultation.component';
 import { RendezVousComponent } from './dashboard/rendez-vous/rendez-vous.component';
 
-  
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'compte', component: CreateFamilyAccountComponent},
