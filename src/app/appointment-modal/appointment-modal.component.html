@@ -1,0 +1,12 @@
+<div class="popin-display">
+    <div class="row" [ngSwitch]="data.typeSuppression">
+      <div mat-dialog-content class="col-10" >
+        <p>Pour le {{data.formattedDate}}, vous souhaitez... </p>
+      </div>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-raised-button class="rounded col-md-2 col-sm-2 mx-auto" [mat-dialog-close]="'rdv'">Programmer un rendez-vous</button>
+      <button mat-raised-button class="rounded col-md-2 col-sm-2 mx-auto" [mat-dialog-close]="'visite'">Programmer une visite</button>
+      <br />
+    </div>
+  </div>

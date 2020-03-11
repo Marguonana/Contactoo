@@ -22,6 +22,7 @@ import { BandeauInfosJourneeComponent } from '@src/app/bandeau-infos-journee/ban
 import { NavbarComponent } from '@src/app/dashboard/navbar/navbar.component';
 import { FooterComponent } from '@src/app/dashboard/footer/footer.component';
 import { RendezVousComponent } from '@src/app/dashboard/rendez-vous/rendez-vous.component';
+import { AppointmentModalComponent } from '@src/app/appointment-modal/appointment-modal.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { RendezVousComponent } from '@src/app/dashboard/rendez-vous/rendez-vous.
     NavbarComponent,
     FooterComponent,
     RendezVousComponent,
+    AppointmentModalComponent,
   ],
   imports: [
     NativeScriptModule,

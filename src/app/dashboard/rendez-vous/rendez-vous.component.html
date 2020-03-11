@@ -1,12 +1,12 @@
 <form>
-    <div class="custom-control custom-radio">
+    <!-- <div class="custom-control custom-radio">
         <input type="radio" id="rdv" name="mode" class="custom-control-input" value="rdv" [(ngModel)]="mode">
         <label class="custom-control-label" for="rdv">Rendez-vous</label>
       </div>
       <div class="custom-control custom-radio">
         <input type="radio" id="visite" name="mode" class="custom-control-input" value="visite" [(ngModel)]="mode">
         <label class="custom-control-label" for="visite">Visite</label>
-      </div>      
+      </div>       -->
 
     <!-- <div class='app-top'>
         <button (click)='toggleVisible()'>toggle visible</button>
@@ -20,19 +20,20 @@
           #calendar
           defaultView="dayGridMonth"
           [header]="{
-            left: 'prev,next today',
+            left: 'prev,next ',
             center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            right: 'dayGridMonth,timeGridDay'
           }"
           [locales]="locales"
           locale="fr"
           [plugins]="calendarPlugins"
+          [height]="500"
           [weekends]="calendarWeekends"
           [events]="calendarEvents"
           (dateClick)="handleDateClick($event)"
         ></full-calendar>
       </div>
 <div class="col-12 mx-auto mt-3 d-flex justify-content-end">
-  <button type="submit" class="btn btn-primary col-3">Poursuivre</button>
+  <button type="button" class="btn btn-primary col-sm-1 col-md-2" [routerLink]="['/welcome']">Retourner au menu</button>
 </div>
 </form>
