@@ -7,7 +7,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./appointment-modal.component.scss']
 })
 export class AppointmentModalComponent{
-
+msg: string;
   constructor(
     public modalRef: MatDialogRef<AppointmentModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
@@ -15,6 +15,10 @@ export class AppointmentModalComponent{
   }
 
   ngOnInit() {
+  }
+
+  getNbRestant(){
+    return this.msg ? (120-this.msg.length) : 120;
   }
 
 }

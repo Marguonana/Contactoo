@@ -3,9 +3,21 @@ p {
 }
 
 .popin-display {
-    padding: 0px 0px 16px 0px !important;
+    margin: 1rem !important;
 }
 
 .outline-none{
     outline: none;
 }
+
+textarea {
+    resize: none;
+ }
+
+ button {
+     color: white;
+     background-color: #2C3E50;
+     &:hover{
+         background-color: #1a252f;
+     }
+ }

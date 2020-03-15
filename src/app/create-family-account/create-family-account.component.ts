@@ -31,7 +31,7 @@ export class CreateFamilyAccountComponent implements OnInit {
   listStatut: Array<string>;
 
   constructor(private router: Router) { 
-    this.listStatut = ['Parent','Fils','Fille','Petit-fils','Petite-fille','Famille autre','Médecin','Infirmière','Medical autre','Ste de service','Autre'];
+    this.listStatut = ['Fils','Fille','Petit-fils','Petite-fille','Famille autre','Médecin','Infirmière','Medical autre','Ste de service','Ehpad','Autre'];
   }
 
   
@@ -51,6 +51,10 @@ export class CreateFamilyAccountComponent implements OnInit {
 
   setEhpad(e){
     this.user.ehpad = e.checked;
+  }
+
+  suitePossible(): boolean{
+    return !!(this.user.nom && this.user.prenom && this.user.statut && this.user.nom.trim() && this.user.prenom.trim());
   }
 
 }

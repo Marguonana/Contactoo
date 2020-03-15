@@ -52,12 +52,14 @@ export class RendezVousComponent implements OnInit {
     }
     else {
       const confirmRef = this.dialog.open(AppointmentModalComponent, {
-        width: '500px',
+        width: '650px',
         data: {formattedDate:  moment(arg.dateStr).format('DD/MM/YYYY HH:mm')},
         autoFocus: false
       });
       confirmRef.afterClosed().subscribe( choix => {
-        switch(choix) {
+        if (!choix)
+          return;
+        switch(choix.type) {
           case 'rdv':
             console.log('rdv choisi');
             this.calendarEvents = this.calendarEvents.concat({ // add new event data. must create new array
