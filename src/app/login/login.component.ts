@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms'
 import {   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
   MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatExpansionPanelDescription } from '@angular/material';
 import { Router } from '@angular/router';
+import { ApiService } from '../service/api.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
     tel: ''
   }
 
-  constructor( private router: Router) { }
+  constructor( private router: Router, public api: ApiService) { }
 
   ngOnInit() {
     let body = document.getElementById("body");
@@ -44,12 +45,12 @@ export class LoginComponent implements OnInit {
   }
 
   handleConnexion() : void {
-    if (this.person.tel && (this.person.tel == "0618401183" || this.person.tel == "0000") ){
-      this.router.navigate(['/welcome']);
+    if (this.person.tel){
+      this.api.post('famille/loginByTel/',{tel: this.person.tel}).subscribe(res => this.router.navigate(['/welcome']), err => console.error('error: ', err));
       return; 
     }
-    if(this.person.email && this.person.email === "rvguevel@free.fr"){
-      this.router.navigate(['/welcome']);
+    else if(this.person.email){
+      this.api.post('famille/loginByEmail/',{email: this.person.email}).subscribe(res => this.router.navigate(['/welcome']), err => console.error('error: ', err));
       return;
     }
   }
