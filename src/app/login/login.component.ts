@@ -46,11 +46,19 @@ export class LoginComponent implements OnInit {
 
   handleConnexion() : void {
     if (this.person.tel){
-      this.api.post('famille/loginByTel/',{tel: this.person.tel}).subscribe(res => this.router.navigate(['/welcome']), err => console.error('error: ', err));
+      this.api.post<any>('famille/loginByTel/',{tel: this.person.tel}).subscribe(
+        res => {
+          sessionStorage.setItem('famille',res);
+          this.router.navigate(['/welcome'])}, 
+        err => console.error('error: ', err));
       return; 
     }
     else if(this.person.email){
-      this.api.post('famille/loginByEmail/',{email: this.person.email}).subscribe(res => this.router.navigate(['/welcome']), err => console.error('error: ', err));
+      this.api.post<any>('famille/loginByEmail/',{email: this.person.email}).subscribe(
+        res => {
+          sessionStorage.setItem('famille',res);
+          this.router.navigate(['/welcome'])}, 
+        err => console.error('error: ', err));
       return;
     }
   }
