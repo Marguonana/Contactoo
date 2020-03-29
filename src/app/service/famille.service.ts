@@ -18,7 +18,9 @@ export class FamilleService {
   }
 
   setFamille(famille: any) : void{
-    this.famille = famille;
-    this.parent = famille.parent;
+    if (famille){
+      this.famille = famille;
+      this.parent = famille.parent;
+    }
   }
 }
