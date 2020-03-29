@@ -25,6 +25,7 @@ export class ParentModalComponent implements OnInit {
   domicile: boolean;
   autre: boolean;
 
+  nouveauParent;
   constructor(
     public modalRef: MatDialogRef<ParentModalComponent>,
     public api: ApiService,
@@ -67,11 +68,13 @@ export class ParentModalComponent implements OnInit {
     this.setLieuDeVie();
     this.api.post('parent/',{parent: this.parent})
       .subscribe(
-        parentCreer => this.api.post('famille/parent',{id: this.familleService.famille._id, parent: parentCreer})
+        parentCreer => {
+          this.nouveauParent = parentCreer; 
+          this.api.post('famille/parent',{id: this.familleService.famille._id, parent: parentCreer})
           .subscribe(
-            res => console.log('Parent ajouté'),
+            res => {this.familleService.famille.parent = this.familleService.parent = this.nouveauParent; sessionStorage.setItem('famille',JSON.stringify(this.familleService.famille))},
             err => console.error('Erreur lors de l\'ajout du parent dans la famille. ',err)
-          ), 
+          )}, 
         err => console.error('Erreur lors de la création du parent. ', err));
   }
 }
