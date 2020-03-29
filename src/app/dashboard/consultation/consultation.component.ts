@@ -122,7 +122,7 @@ export class ConsultationComponent implements OnInit, OnDestroy {
       if(!notSave) return false;
       this.messagesAujourdhui.forEach(today => {
         if (today.dateEnvoi === msg.dateEnvoi)
-          return false
+          notSave = false
       });
       if(!notSave) return false;
       else return true;
@@ -147,6 +147,7 @@ export class ConsultationComponent implements OnInit, OnDestroy {
   
 
   ngOnDestroy() {
+
     this.observableMsgList.unsubscribe();
   }
 }
