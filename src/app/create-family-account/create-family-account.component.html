@@ -5,31 +5,34 @@
             <div class="row">
                 <div class="col-12">
                     <mat-form-field >
-                            <input matInput id="nom" placeholder="Votre nom" type="text" [(ngModel)]="user.nom" [ngModelOptions]="{standalone: true}" name="nom">
+                            <input matInput id="nom" placeholder="Nom" type="text" [(ngModel)]="user.nom" [ngModelOptions]="{standalone: true}" name="nom" required>
+                            <mat-error *ngIf="!user.nom">Ce champ doit être renseigné</mat-error>
                     </mat-form-field>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <mat-form-field >
-                            <input matInput id="prenom" placeholder="Votre prénom" type="text" [(ngModel)]="user.prenom" [ngModelOptions]="{standalone: true}" name="prenom">
+                            <input matInput id="prenom" placeholder="Prénom" type="text" [(ngModel)]="user.prenom" [ngModelOptions]="{standalone: true}" name="prenom" required>
+                            <mat-error *ngIf="!user.prenom">Ce champ doit être renseigné</mat-error>
                     </mat-form-field>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <mat-form-field >
-                        <mat-label>Statut*</mat-label>
-                        <mat-select [(ngModel)]="user.statut" [ngModelOptions]="{standalone: true}">
+                        <mat-label>Statut</mat-label>
+                        <mat-select [(ngModel)]="user.statut" [ngModelOptions]="{standalone: true}" required>
                             <mat-option *ngFor="let type of listStatut" [value]="type" name="type">
                             {{type}}
                             </mat-option>
                         </mat-select>
+                        <mat-error *ngIf="!user.statut">Ce champ doit être renseigné</mat-error>
                     </mat-form-field>
                 </div>
             </div>
         </div>
-        <a  class="lien" *ngIf="!next && user.statut" (click)="next = !next">suite »</a>
+        <a  class="lien" *ngIf="!next && suitePossible()" (click)="next = !next">suite »</a>
         <a class="lien" *ngIf="next && user.statut" (click)="next = !next">« retour </a>
         <div *ngIf="next">
             <div class="row" *ngIf="user.statut === 'Parent'">

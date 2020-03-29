@@ -1,0 +1,15 @@
+<div class="popin-display">
+    <div class="row" [ngSwitch]="data.typeSuppression">
+      <div mat-dialog-content class="col-10 mx-auto text-center" >
+        <label for="exampleFormControlTextarea1">Veuillez saisir un message pour l'évènement du {{data.formattedDate}} :</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" maxlength="120" rows="3" [(ngModel)]="msg" [ngModelOptions]="{standalone: true}" ></textarea>
+        <mat-error *ngIf="msg">Nombre de caractères restants: {{getNbRestant()}}</mat-error>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <button mat-raised-button class="rounded mx-auto" [mat-dialog-close]="{type: 'rdv', text: msg}">Programmer un rendez-vous</button>
+      <button mat-raised-button class="rounded mx-auto" [mat-dialog-close]="{type: 'visite', text: msg}">Programmer une visite</button>
+      <br />
+    </div>
+  </div>

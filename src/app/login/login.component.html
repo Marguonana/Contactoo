@@ -1,5 +1,4 @@
 <div class=" h-80">
-    <!-- <img id="profile-img"  style="margin-left:auto;margin-right:auto" class="rounded-circle profile-img-card" src="assets/grandparent.jpg" /> -->
     <div class="row align-items-center h-100">
         <div class="col-3 mx-auto">
             <div class="text-center">
@@ -11,7 +10,7 @@
                     <p> OU </p>
                     <div>
                         <input type="email" name="email" id="inputEmail" class="form-control form-group" placeholder="Adresse mail" [(ngModel)]="person.email" [ngModelOptions]="{standalone: true}" (click)="cleanInput('tel')" required autofocus>
-                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="handleConnexion()">Entrer</button>
+                        <div><button class="btn btn-lg btn-primary btn-block btn-signin mx-auto" type="submit" (click)="handleConnexion()">Entrer</button></div>
                         <a href="https://www.contactoo.fr/groupe-famille" id="forgot_pswd" >Pas encore de compte?</a> 
                     </div>
                 </form>
@@ -19,25 +18,3 @@
         </div>
     </div>
 </div>
-
-<!-- <div id="logreg-forms" style="background: #ecfaff">
-    <form class="form-signin">
-        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Se connecter</h1>
-        <div class="row">
-            <div class="col-12">
-                <mat-form-field >
-                        <input matInput id="tel" placeholder="Numero de telephone" type="number" [(ngModel)]="person.tel" [ngModelOptions]="{standalone: true}">
-                </mat-form-field>
-            </div>
-        </div>
-         
-        <button class="btn btn-success btn-block" type="submit" (click)="handleConnexion()"><i class="fas fa-sign-in-alt"></i>Se connecter</button>
-         <a href="#" id="forgot_pswd">Mot de passe oublié</a> 
-        <hr>
-        
-        <button class="btn btn-primary btn-block" type="button" id="btn-signup" [routerLink]="['/compte']" routerLinkActive="router-link-active" ><i class="fas fa-user-plus"></i> Créer un compte</button>
-    </form>
-
-        <br>
-        
-</div> -->

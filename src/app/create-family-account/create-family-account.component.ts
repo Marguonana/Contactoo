@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../service/api.service';
 
 
 @Component({
@@ -30,8 +31,8 @@ export class CreateFamilyAccountComponent implements OnInit {
 
   listStatut: Array<string>;
 
-  constructor(private router: Router) { 
-    this.listStatut = ['Parent','Fils','Fille','Petit-fils','Petite-fille','Famille autre','Médecin','Infirmière','Medical autre','Ste de service','Autre'];
+  constructor(private router: Router, public api: ApiService) { 
+    this.listStatut = ['Fils','Fille','Petit-fils','Petite-fille','Famille autre','Médecin','Infirmière','Medical autre','Ste de service','Ehpad','Autre'];
   }
 
   
@@ -41,16 +42,20 @@ export class CreateFamilyAccountComponent implements OnInit {
     // body.style.backgroundSize=  null;
   }
 
-  toCreateFamily(){
-    
-  }
-
-  handleCreation() : void {
-    this.router.navigate(['/welcome']);    
+  handleCreation(): void{
+    this.api.post<any>('famille/',{famille: this.user}).subscribe(
+      res => {
+        sessionStorage.setItem('famille',res);
+        this.router.navigate(['/'])}, 
+      err => console.error('error: ', err));
   }
 
   setEhpad(e){
     this.user.ehpad = e.checked;
+  }
+
+  suitePossible(): boolean{
+    return !!(this.user.nom && this.user.prenom && this.user.statut && this.user.nom.trim() && this.user.prenom.trim());
   }
 
 }
