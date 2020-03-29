@@ -67,6 +67,9 @@ export class RendezVousComponent implements OnInit {
               start: arg.date,
               allDay: arg.allDay
             })
+            // Envoyer la visite et le msg au wb 
+            // msg -> choix.msg
+            // 'visite' ou 'rdv' ? choix.type
             break;
           case 'visite':
             console.log('visite');
@@ -75,6 +78,9 @@ export class RendezVousComponent implements OnInit {
               start: arg.date,
               allDay: arg.allDay
             })
+            // Envoyer la visite et le msg au wb 
+            // msg -> choix.msg
+            // 'visite' ou 'rdv' ? choix.type
             break;
           default: 
             console.log('annulation');

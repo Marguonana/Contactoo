@@ -1,0 +1,59 @@
+<div class="popin-display">
+<h1>Administration</h1>
+    <br />
+    <div class="justify-content-sm-center">
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+            <mat-label>Nom</mat-label>
+            <input matInput #input type="text">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+            <mat-label>Prénom</mat-label>
+            <input matInput #input type="text">
+            </mat-form-field>
+        </div>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+            <mat-label>Date de naissance</mat-label>
+            <input matInput #input type="date">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+            <mat-label>Numéro de sécu</mat-label>
+            <input matInput #input type="number">
+            </mat-form-field>
+        </div>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+            <mat-label>Adresse</mat-label>
+            <input matInput #input>
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+            <mat-label>Ville</mat-label>
+            <input matInput #input type="text">
+            </mat-form-field>
+        </div>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+            <mat-label>Code postal</mat-label>
+            <input matInput #input type="number">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+            <mat-label>Médecin</mat-label>
+            <input matInput #input type="text">
+            </mat-form-field>
+        </div>
+        <div class="example-container text-center">
+            <mat-label>Lieu de vie</mat-label>
+            <div><mat-checkbox>Ehpad</mat-checkbox><mat-checkbox>Domicile</mat-checkbox><mat-checkbox>Autre</mat-checkbox></div>
+        </div>
+    </div>
+    <div class="row">
+      <button mat-raised-button class="rounded mx-auto" [mat-dialog-close]>Retour</button>
+      <button mat-raised-button class="rounded mx-auto" (click)="sauvagarder">Enregistrer</button>
+      <br />
+    </div>
+  </div>

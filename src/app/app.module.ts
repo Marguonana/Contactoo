@@ -22,6 +22,7 @@ import { FooterComponent } from '@src/app/dashboard/footer/footer.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { RendezVousComponent } from '@src/app/dashboard/rendez-vous/rendez-vous.component';
 import { AppointmentModalComponent } from '@src/app/appointment-modal/appointment-modal.component';
+import { ParentModalComponent } from '@src/app/parent-modal/parent-modal.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AppointmentModalComponent } from '@src/app/appointment-modal/appointmen
     NavbarComponent,
     FooterComponent,
     RendezVousComponent,
-    AppointmentModalComponent
+    AppointmentModalComponent,
+    ParentModalComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,7 @@ import { AppointmentModalComponent } from '@src/app/appointment-modal/appointmen
     AppRoutingModule,
     FullCalendarModule
   ],
-  entryComponents: [ AppointmentModalComponent ],
+  entryComponents: [ AppointmentModalComponent,ParentModalComponent ],
   providers: [],
   bootstrap: [AppComponent]
 })

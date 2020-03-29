@@ -23,6 +23,7 @@ import { NavbarComponent } from '@src/app/dashboard/navbar/navbar.component';
 import { FooterComponent } from '@src/app/dashboard/footer/footer.component';
 import { RendezVousComponent } from '@src/app/dashboard/rendez-vous/rendez-vous.component';
 import { AppointmentModalComponent } from '@src/app/appointment-modal/appointment-modal.component';
+import { ParentModalComponent } from '@src/app/parent-modal/parent-modal.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AppointmentModalComponent } from '@src/app/appointment-modal/appointmen
     FooterComponent,
     RendezVousComponent,
     AppointmentModalComponent,
+    ParentModalComponent,
   ],
   imports: [
     NativeScriptModule,
