@@ -2,53 +2,53 @@
 <h1>Administration</h1>
     <br />
     <div class="justify-content-sm-center">
-        <div class="example-container">
+        <div class="example-container text-center">
             <mat-form-field appearance="fill">
             <mat-label>Nom</mat-label>
-            <input matInput #input type="text">
+            <input matInput #input type="text" [(ngModel)]="parent.nom" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
         
             <mat-form-field appearance="fill">
             <mat-label>Prénom</mat-label>
-            <input matInput #input type="text">
+            <input matInput #input type="text" [(ngModel)]="parent.prenom" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
         </div>
-        <div class="example-container">
+        <div class="example-container text-center">
             <mat-form-field appearance="fill">
             <mat-label>Date de naissance</mat-label>
-            <input matInput #input type="date">
+            <input matInput #input type="date" [(ngModel)]="parent.dateNaissance" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
         
             <mat-form-field appearance="fill">
             <mat-label>Numéro de sécu</mat-label>
-            <input matInput #input type="number">
+            <input matInput #input type="number" [(ngModel)]="parent.numSecu" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
         </div>
-        <div class="example-container">
+        <div class="example-container text-center">
             <mat-form-field appearance="fill">
             <mat-label>Adresse</mat-label>
-            <input matInput #input>
+            <input matInput #input type="text" [(ngModel)]="parent.adresse" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
         
             <mat-form-field appearance="fill">
             <mat-label>Ville</mat-label>
-            <input matInput #input type="text">
+            <input matInput #input type="text" [(ngModel)]="parent.ville" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
         </div>
-        <div class="example-container">
+        <div class="example-container text-center">
             <mat-form-field appearance="fill">
             <mat-label>Code postal</mat-label>
-            <input matInput #input type="number">
+            <input matInput #input type="number" [(ngModel)]="parent.cp" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
         
             <mat-form-field appearance="fill">
             <mat-label>Médecin</mat-label>
-            <input matInput #input type="text">
+            <input matInput #input type="text" [(ngModel)]="parent.medecin" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
         </div>
         <div class="example-container text-center">
             <mat-label>Lieu de vie</mat-label>
-            <div><mat-checkbox>Ehpad</mat-checkbox><mat-checkbox>Domicile</mat-checkbox><mat-checkbox>Autre</mat-checkbox></div>
+            <div><mat-checkbox (change)="setEhpad($event)" value=''>Ehpad</mat-checkbox><mat-checkbox (change)="setDomicile($event)" value=''>Domicile</mat-checkbox><mat-checkbox (change)="setAutre($event)" value=''>Autre</mat-checkbox></div>
         </div>
     </div>
     <div class="row">
