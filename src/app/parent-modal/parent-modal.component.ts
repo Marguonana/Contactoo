@@ -66,13 +66,13 @@ export class ParentModalComponent implements OnInit {
 
   sauvegarder(){
     this.setLieuDeVie();
-    this.api.post('parent/',{parent: this.parent})
+    this.api.post('parent/nouveau/',{parent: this.parent})
       .subscribe(
         parentCreer => {
           this.nouveauParent = parentCreer; 
           this.api.post('famille/parent',{id: this.familleService.famille._id, parent: parentCreer})
           .subscribe(
-            res => {this.familleService.famille.parent = this.familleService.parent = this.nouveauParent; sessionStorage.setItem('famille',JSON.stringify(this.familleService.famille))},
+            res => {this.familleService.famille.parents = this.nouveauParent; sessionStorage.setItem('famille',JSON.stringify(this.familleService.famille))},
             err => console.error('Erreur lors de l\'ajout du parent dans la famille. ',err)
           )}, 
         err => console.error('Erreur lors de la création du parent. ', err));

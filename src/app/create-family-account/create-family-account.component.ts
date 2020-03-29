@@ -23,7 +23,7 @@ export class CreateFamilyAccountComponent implements OnInit {
     ehpad: '',
     numSecu: '',
     medecin: '',
-    portable: '',
+    portable: Number,
     nomSteService: '',
     autre: '',
     infos: ''
@@ -43,7 +43,7 @@ export class CreateFamilyAccountComponent implements OnInit {
   }
 
   handleCreation(): void{
-    this.api.post<any>('famille/',{famille: this.user}).subscribe(
+    this.api.post<any>('famille/newFamille/',{famille: this.user}).subscribe(
       res => {
         sessionStorage.setItem('famille',res);
         this.router.navigate(['/'])}, 

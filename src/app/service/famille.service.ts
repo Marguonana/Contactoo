@@ -9,7 +9,6 @@ import { Subject } from 'rxjs';
 export class FamilleService {
 
   famille: any;
-  parent: any;
 
   constructor() {
     if (!this.famille){
@@ -20,7 +19,6 @@ export class FamilleService {
   setFamille(famille: any) : void{
     if (famille){
       this.famille = famille;
-      this.parent = famille.parent;
     }
   }
 }

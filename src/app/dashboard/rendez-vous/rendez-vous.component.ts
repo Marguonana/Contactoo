@@ -8,6 +8,8 @@ import frLocale from '@fullcalendar/core/locales/fr';
 import interactionPlugin from '@fullcalendar/interaction'; // for dateClick
 import * as moment from "moment";
 import { AppointmentModalComponent } from '@src/app/appointment-modal/appointment-modal.component';
+import { FamilleService } from '@src/app/service/famille.service';
+import { ApiService } from '@src/app/service/api.service';
 @Component({
   selector: 'app-rendez-vous',
   templateUrl: './rendez-vous.component.html',
@@ -26,7 +28,7 @@ export class RendezVousComponent implements OnInit {
 
   @ViewChild("calendar",null) calendarComponent: FullCalendarComponent; // the #calendar in the template
   
-  constructor(public dialog: MatDialog){}
+  constructor(public dialog: MatDialog, private api: ApiService, private familleService: FamilleService){}
 
   ngOnInit(): void {
 
@@ -68,8 +70,9 @@ export class RendezVousComponent implements OnInit {
               start: arg.date,
               allDay: arg.allDay
             })
+            this.envoyerMsg(choix.type,moment(arg.dateStr).format('DD/MM/YYYY HH:mm'),choix.text);
             // Envoyer la visite et le msg au wb 
-            // msg -> choix.msg
+            // msg -> choix.text
             // 'visite' ou 'rdv' ? choix.type
             break;
           case 'visite':
@@ -79,8 +82,9 @@ export class RendezVousComponent implements OnInit {
               start: arg.date,
               allDay: arg.allDay
             })
+            this.envoyerMsg(choix.type,moment(arg.dateStr).format('DD/MM/YYYY HH:mm'),choix.text);
             // Envoyer la visite et le msg au wb 
-            // msg -> choix.msg
+            // msg -> choix.text
             // 'visite' ou 'rdv' ? choix.type
             break;
           default: 
@@ -88,6 +92,20 @@ export class RendezVousComponent implements OnInit {
             break;
         }
       });
+    }
+  }
+
+  envoyerMsg(type,date,msg){
+    if (msg){
+      console.log("Message à transmettre : ",msg);
+      let data = {
+        corpus: msg,
+        emetteur: { nom: this.familleService.famille.prenom, id: this.familleService.famille._id},
+        dateEnvoi: moment(),
+        dateEvenement: date,
+        typeEvenement: type
+      }
+      this.api.post('message/groupe/'+this.familleService.famille.parents[0]._id,{data: data}).subscribe(res => console.log('lien d\'accès: ',res), err => console.error('error: ', err));
     }
   }
 

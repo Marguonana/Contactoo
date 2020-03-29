@@ -7,9 +7,10 @@ import {
 } from "@angular/core";
 import { ApiService } from "@src/app/service/api.service";
 import { HttpParams } from "@angular/common/http";
-import { Observable, interval } from "rxjs";
+import { Observable, interval, Subscription } from "rxjs";
 import * as moment from "moment";
 import { map, distinctUntilChanged } from "rxjs/operators";
+import { Route, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: "app-consultation",
@@ -31,7 +32,10 @@ export class ConsultationComponent implements OnInit, OnDestroy {
   dateEtMomentDeLaJournee:string;
   heure;
 
-  constructor(private api: ApiService) {}
+  messagesDemain;
+  messagesAujourdhui;
+
+  constructor(private api: ApiService, private router: ActivatedRoute) {}
 
   ngOnInit() {
     let container = document.getElementById("dashboard-container");
@@ -89,13 +93,11 @@ export class ConsultationComponent implements OnInit, OnDestroy {
 
   checkMessage() {
     this.api
-      .getUnhandled<Array<any>>("message/laFamille")
+      .getUnhandled<Array<any>>("message/id/"+this.router.snapshot.paramMap.get('id'))
       .toPromise()
       .then(received => {
         if (received && received.length > 0) {
-          
-          
-          this.messageList = received.slice(-3);
+          this.classerMessage(received);
           if (this.messageList && this.messageList.length < 0) {
             this.aucunMsg = true;
           } else {
@@ -104,6 +106,28 @@ export class ConsultationComponent implements OnInit, OnDestroy {
         }
       })
       .catch(err => (this.aucunMsg = true));
+  }
+
+  classerMessage(listMsg){
+    this.messagesDemain = listMsg.filter(msg => msg.dateEvenement && msg.dateEvenement.toString().includes(moment().add(1,'days').format('DD/MM/YYYY')) )
+    this.messagesAujourdhui = listMsg.filter(msg => msg.dateEvenement &&  msg.dateEvenement.toString().includes(moment().format('DD/MM/YYYY')) )
+    this.messagesDemain = this.messagesDemain.slice(-3);
+    this.messagesAujourdhui = this.messagesAujourdhui.slice(-3);
+    this.messageList = listMsg.filter(msg => {
+      let notSave = true;
+      this.messagesDemain.forEach(demain => {
+        if (demain.dateEnvoi === msg.dateEnvoi)
+          notSave = false;
+      });
+      if(!notSave) return false;
+      this.messagesAujourdhui.forEach(today => {
+        if (today.dateEnvoi === msg.dateEnvoi)
+          return false
+      });
+      if(!notSave) return false;
+      else return true;
+    })
+    this.messageList = this.messageList.slice(-3);
   }
 
   deleteMsg(text) {

@@ -5,14 +5,24 @@
   <th>
      <table style="border-collapse:collapse;">
      <tr><th class="jour"> Aujourd'hui</th></tr>
-     <tr><th class="texte-jour"> TEXTE JOUR</th></tr>
+     <tr><th class="texte-jour"> 
+      <div *ngFor="let msg of messagesAujourdhui; let i = index">
+        <strong>{{msg.emetteur.nom }}:</strong> {{msg.corpus}}
+        <hr *ngIf="i !== 2">
+     </div>
+     </th></tr>
      </table>
   </th>
   
   <th>
      <table style="border-collapse:collapse;">
      <tr><th class="demain"> Demain</th></tr>
-     <tr><th class="texte-demain"> TEXTE DEMAIN</th></tr>
+     <tr><th class="texte-demain">
+      <div *ngFor="let msg of messagesDemain; let i = index">
+        <strong>{{msg.emetteur.nom }}:</strong> {{msg.corpus}}
+        <hr *ngIf="i !== 2">
+     </div>
+     </th></tr>
      </table>
   </th>
   

@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'family', component: FamilyComponent},
   { path: 'addMember', component: CreateMemberComponent},
   { path: 'welcome', component: WelcomeComponent},
-  { path: 'consultation', component: ConsultationComponent},
+  { path: 'consultation/:id', component: ConsultationComponent},
   { path:'rdv', component: RendezVousComponent }
 ];
 

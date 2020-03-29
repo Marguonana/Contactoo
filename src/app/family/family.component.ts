@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import * as moment from "moment";
+import { FamilleService } from '../service/famille.service';
 
 @Component({
   selector: 'app-family',
@@ -10,10 +11,14 @@ import * as moment from "moment";
 export class FamilyComponent implements OnInit {
 
 message : string;
-
-  constructor(private api : ApiService) { }
+aucunParentRelier : boolean;
+nom;
+  constructor(private api : ApiService, private familleService: FamilleService) { }
 
   ngOnInit() {
+    if (this.familleService.famille && (!this.familleService.famille.parents || this.familleService.famille.parents.length < 1 ))
+      this.aucunParentRelier = true;
+    this.nom = this.familleService.famille.nom;
   }
 
   sendMsg() : void {
@@ -22,10 +27,10 @@ message : string;
       // Plus tard, rajouter l'id
       let data = {
         corpus: this.message,
-        emetteur: { nom: 'Hervé', id: '121'},
+        emetteur: { nom: this.familleService.famille.prenom, id: this.familleService.famille._id},
         dateEnvoi: moment()
       }
-      this.api.post('message/',{data: data}).subscribe(res => console.log(res), err => console.error('error: ', err));
+      this.api.post('message/groupe/'+this.familleService.famille.parents[0]._id,{data: data}).subscribe(res => console.log('lien d\'accès: ',res), err => console.error('error: ', err));
       this.message = "";
     }
       
