@@ -16,4 +16,8 @@ export class ParentModalComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  sauvegarder(){
+
+  }
 }
