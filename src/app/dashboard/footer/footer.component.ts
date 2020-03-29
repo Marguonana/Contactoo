@@ -10,9 +10,15 @@ import { ParentModalComponent } from '@src/app/parent-modal/parent-modal.compone
 })
 export class FooterComponent implements OnInit {
 
+  hasParent: boolean;
+  idUrl
   constructor(public dialog: MatDialog, public familleService: FamilleService) { }
 
   ngOnInit() {
+    if(this.familleService.famille && this.familleService.famille.parents && this.familleService.famille.parents.length > 0 ){
+      this.hasParent = true;
+      this.idUrl = this.familleService.famille.parents[0]._id;
+    }
   }
 
   gestionParent(){

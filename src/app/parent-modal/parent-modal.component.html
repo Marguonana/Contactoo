@@ -48,12 +48,12 @@
         </div>
         <div class="example-container text-center">
             <mat-label>Lieu de vie</mat-label>
-            <div><mat-checkbox (change)="setEhpad($event)" value=''>Ehpad</mat-checkbox><mat-checkbox (change)="setDomicile($event)" value=''>Domicile</mat-checkbox><mat-checkbox (change)="setAutre($event)" value=''>Autre</mat-checkbox></div>
+            <div><mat-checkbox (change)="setEhpad($event)" [(ngModel)]="ehpad">Ehpad</mat-checkbox><mat-checkbox (change)="setDomicile($event)" [(ngModel)]="domicile">Domicile</mat-checkbox><mat-checkbox (change)="setAutre($event)" [(ngModel)]="autre">Autre</mat-checkbox></div>
         </div>
     </div>
     <div class="row">
       <button mat-raised-button class="rounded mx-auto" [mat-dialog-close]>Retour</button>
-      <button mat-raised-button class="rounded mx-auto" (click)="sauvegarder()">Enregistrer</button>
+      <button mat-raised-button class="rounded mx-auto" (click)="sauvegarder()" mat-dialog-close>Enregistrer</button>
       <br />
     </div>
   </div>

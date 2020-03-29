@@ -35,7 +35,17 @@ export class ParentModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    if(this.familleService.famille && this.familleService.famille.parents && this.familleService.famille.parents.length > 0){
+      this.parent = this.familleService.famille.parents[0];
+      if(this.parent.lieuDeVie.length > 0){
+        if(this.parent.lieuDeVie.includes('EHPAD'))
+          this.ehpad = true;
+        if(this.parent.lieuDeVie.includes('DOMICILE'))
+          this.domicile = true;
+        if(this.parent.lieuDeVie.includes('AUTRE'))
+          this.autre = true;
+      }
+    }
   }
 
   setEhpad(event){
@@ -72,7 +82,7 @@ export class ParentModalComponent implements OnInit {
           this.nouveauParent = parentCreer; 
           this.api.post('famille/parent',{id: this.familleService.famille._id, parent: parentCreer})
           .subscribe(
-            res => {this.familleService.famille.parents = this.nouveauParent; sessionStorage.setItem('famille',JSON.stringify(this.familleService.famille))},
+            res => {this.familleService.famille.parents = new Array(this.nouveauParent); sessionStorage.setItem('famille',JSON.stringify(this.familleService.famille))},
             err => console.error('Erreur lors de l\'ajout du parent dans la famille. ',err)
           )}, 
         err => console.error('Erreur lors de la création du parent. ', err));

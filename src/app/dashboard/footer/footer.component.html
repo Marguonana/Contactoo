@@ -6,7 +6,7 @@
       <p><a href="#" role="button">Voir toutes les infos Groupe</a></p>
       <hr>
       <div class="text-center">
-        <p><a [routerLink]="['/consultation']" routerLinkActive="router-link-active"  role="button">Voir l'écran connecté</a></p>
+        <p *ngIf="hasParent"><a [routerLink]="['/consultation', idUrl]" routerLinkActive="router-link-active"  role="button">Voir l'écran connecté</a></p>
         <p><a id="admin" role="button" (click)="gestionParent()">Administration: Gestion du parent</a></p>
         <p><a href="#" role="button">Modifier/supprimer un message de l'écran</a></p>
         <p><a [routerLink]="['/compte']" routerLinkActive="router-link-active" role="button">Ajouter un membre au Groupe</a></p>
