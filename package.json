@@ -35,7 +35,7 @@
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "hammerjs": "^2.0.8",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "nativescript": "^6.2.2",
     "nativescript-angular": "~8.20.0",
